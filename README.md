@@ -18,4 +18,32 @@ python -m pip install -r requirements.txt
 
 ## Usage
 Make sure you are in the same directory as wapt.py then run
-- ```python wapt.py```
+```
+python wapt.py
+```
+You would see the help menu of WAPT.
+- Installing a package.
+```
+python wapt.py install <package-name>[:version]
+```
+- Print the help menu
+```
+python wapt.py help
+```
+- Searching for a package
+```
+python wapt.py search <package-name>[:version]
+```
+- Updating Source list
+```
+python wapt.py update
+```
+
+## Wapt Source List
+
+You can look at Wapt's source list (here)[https://github.com/MK-1407/WAPT/sources_list.csv]
+Wapt is in development, your contribution  would be valuable. So if you can please add packages to the source list, the format for it is.
+Package name,package url,latest,version.
+
+## Contributing
+No pull request will be accepted to main branch. So please create a separate branch which will be merged after review.
