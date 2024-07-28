@@ -6,7 +6,8 @@ from WAPT.search import search
 
 # PRINT TITLE
 console = Console()
-console.print(Title)
+console.print(f"{Title}",end="\n\n")
+
 
 # CONSTANTS
 ARGS = sys.argv
@@ -21,8 +22,9 @@ try:
     elif ARGS[1].lower() == "search":
         package = ARGS[2].split(':')
         package_name = package[0]
-        result = search(package_name=package_name)
-        console.print(result)
+        res = search(package_name=package_name)
+        for result in res: 
+            console.print(f"[bold italic blue]{result['name']}\n[italic green]{result['url']}\n[italic yellow]Version:{result['version']}\n")
     elif ARGS[1].lower() == "install":
         package = ARGS[2].split(':')
         package_name = package[0]
