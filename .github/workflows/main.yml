@@ -1,0 +1,45 @@
+name: Send Email on PR Merge
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  send_email:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install yagmail
+        run: pip install yagmail
+
+      - name: Send email
+        env:
+          EMAIL_USERNAME: ${{ secrets.EMAIL_USERNAME }}
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+          PR_AUTHOR: ${{ github.event.pull_request.user.login }}
+        run: |
+          python -c "
+import yagmail
+import os
+
+username = os.getenv('EMAIL_USERNAME')
+password = os.getenv('EMAIL_PASSWORD')
+pr_author = os.getenv('PR_AUTHOR')
+
+# Email content
+subject = 'Thank you for your contribution!'
+contents = f'Thank you, {pr_author}, for your contribution to our repository. Your PR has been successfully merged!'
+
+# Sending the email
+yag = yagmail.SMTP(username, password)
+yag.send(to=username, subject=subject, contents=contents)
+          "
