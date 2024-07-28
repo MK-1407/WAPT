@@ -41,7 +41,7 @@ python wapt.py update
 
 ## Wapt Source List
 
-You can look at Wapt's source list (here)[https://github.com/MK-1407/WAPT/sources_list.csv]
+You can look at Wapt's source list [here](./sources_list.csv)
 Wapt is in development, your contribution  would be valuable. So if you can please add packages to the source list, the format for it is.
 Package name,package url,latest,version.
 
