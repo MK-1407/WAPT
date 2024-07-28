@@ -1,5 +1,6 @@
 # WAPT - Windows Advanced Package Tool
-> WAPT is in development phase and even all basic functionality are being added.
+> [!Note]
+>WAPT is in development phase and even all basic functionality are being added.
 > Currently it has only one functionality, install, which only downloads the package
 > from sources.
 
