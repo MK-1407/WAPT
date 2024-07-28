@@ -2,6 +2,7 @@ import sys
 from WAPT.install import install
 from rich.console import Console
 from WAPT.messages import Title, help
+from WAPT.search import search
 
 # PRINT TITLE
 console = Console()
@@ -17,6 +18,11 @@ try:
         console.print(help)
     elif ARGS[1].lower() == "help":
         console.print(help)
+    elif ARGS[1].lower() == "search":
+        package = ARGS[2].split(':')
+        package_name = package[0]
+        result = search(package_name=package_name)
+        console.print(result)
     elif ARGS[1].lower() == "install":
         package = ARGS[2].split(':')
         package_name = package[0]
