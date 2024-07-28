@@ -40,7 +40,6 @@ subject = 'Thank you for your contribution!'
 contents = f'Thank you, {pr_author}, for your contribution to our repository. Your PR has been successfully merged!'
 
 # Sending the email
-yag = yagmail.SMTP(username, password)
+yag = yagmail.SMTP(user=username, password=password)
 yag.send(to=username, subject=subject, contents=contents)
           "
-          
