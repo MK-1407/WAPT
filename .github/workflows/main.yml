@@ -43,3 +43,4 @@ contents = f'Thank you, {pr_author}, for your contribution to our repository. Yo
 yag = yagmail.SMTP(username, password)
 yag.send(to=username, subject=subject, contents=contents)
           "
+          
