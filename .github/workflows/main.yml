@@ -18,7 +18,7 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Install yagmail
+      - name: Install dependencies
         run: pip install yagmail
 
       - name: Send email
@@ -26,20 +26,4 @@ jobs:
           EMAIL_USERNAME: ${{ secrets.EMAIL_USERNAME }}
           EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
           PR_AUTHOR: ${{ github.event.pull_request.user.login }}
-        run: |
-          python -c "
-import yagmail
-import os
-
-username = os.getenv('EMAIL_USERNAME')
-password = os.getenv('EMAIL_PASSWORD')
-pr_author = os.getenv('PR_AUTHOR')
-
-# Email content
-subject = 'Thank you for your contribution!'
-contents = f'Thank you, {pr_author}, for your contribution to our repository. Your PR has been successfully merged!'
-
-# Sending the email
-yag = yagmail.SMTP(user=username, password=password)
-yag.send(to=username, subject=subject, contents=contents)
-          "
+        run: python .github/workflows/send_email.py
