@@ -12,6 +12,7 @@ help = Table(title="HELP MENU", title_justify="center")
 help.add_column('[bold Blue]Command[bold Blue]')
 help.add_column('[bold red]Description[/bold red]')
 help.add_row('help','Prints this help menu.', end_section=True)
+help.add_row('search','Searches a package in the available sources \n [bold magenta]SYNTAX:[/bold magenta] wapt search <package-name> \n [bold yellow]Example:[/bold yellow] wapt search Chrome', end_section=True)
 help.add_row('install','Installs a package \n [bold magenta]SYNTAX:[/bold magenta] wapt install <package-name>[:version] \n [bold yellow]Example:[/bold yellow] wapt install Chrome \n          wapt install Chrome:latest \n          wapt install Chrome:72.1'
              ,end_section=True)
 help.add_row('update','Updates source list of [bold Red]wapt[/bold Red].\n [bold magenta]SYNTAX:[/bold magenta] wapt update', end_section=True)
