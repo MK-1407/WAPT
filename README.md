@@ -8,14 +8,14 @@ WAPT or WinApt or Windows Advanced Package Tool is an package manager for Window
 ## Installation
 
 - Clone this repository.
-`
+```
 git clone https://github.com/MK-1407/WAPT.git
-`
+```
 - Install required libraries.
-`
+```
 python -m pip install -r requirements.txt
-`
+```
 
 ## Usage
 Make sure you are in the same directory as wapt.py then run
-- `python wapt.py`
+- ```python wapt.py```
